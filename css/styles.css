@@ -1,0 +1,129 @@
+:root {
+  --background-color: #0e273c;
+  --ctiron: #e1ce7a;
+  --white: #fff;
+  --transition-02: 0.2s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+a {
+  font-size: 16px;
+}
+
+/* Utility classes */
+.ls-54 {
+  letter-spacing: 0.54px;
+}
+/* Navigation */
+.navbar {
+  background: var(--background-color);
+  border-bottom: 2px solid var(--ctiron);
+  padding: 20px 0;
+}
+.navbar .navbar-brand {
+  color: var(--white);
+  font-size: 32px;
+}
+.navbar .navbar-brand img {
+  max-width: 75px;
+  box-shadow: 0 0 50px rgba(204, 204, 204, 0.3);
+}
+
+.navbar .nav-link {
+  color: var(--ctiron);
+  transition: color var(--transition-02) ease-in;
+}
+
+.navbar .nav-link:hover {
+  color: var(--white);
+  transition: color var(--transition-02) ease-in;
+}
+/* Haburger menu lines */
+.navbar button {
+  width: 50px;
+}
+.navbar button:focus {
+  box-shadow: none;
+}
+.line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: var(--ctiron);
+  z-index: 2;
+}
+.line:before,
+.line:after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ctiron);
+  transition: all var(--transition-02) ease-in;
+}
+.line:after {
+  top: 7px;
+  transform: rotate(180deg);
+  transition: all var(--transition-02) ease-in;
+}
+/* Hamburger menu animation */
+.navbar-toggler[aria-expanded="true"] .line:before {
+  top: 0;
+  opacity: 0;
+  transition: all var(--transition-02) ease-in;
+}
+.navbar-toggler[aria-expanded="true"] .line {
+  transform: rotate(-135deg);
+  transition: all var(--transition-02) ease-in;
+}
+.navbar-toggler[aria-expanded="true"] .line:after {
+  top: 0;
+  transform: rotate(90deg);
+  transition: all var(--transition-02) ease-in;
+}
+
+/* Main content */
+/* Hero section */
+.hero {
+  height: 400px;
+  background: url("../images/hero_image.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.7;
+}
+/* Jumbotron */
+.jumbotron {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
