@@ -24,6 +24,7 @@ h1 {
 
 h2 {
   font-size: 24px;
+  color: var(--background-color);
 }
 
 h5 {
@@ -32,8 +33,19 @@ h5 {
 
 a {
   font-size: 16px;
+  color: var(--background-color);
+  text-decoration: none;
 }
 
+p {
+  font-size: 16px;
+  color: var(--background-color);
+}
+
+ul,
+ol {
+  list-style: none;
+}
 /* Utility classes */
 .ls-54 {
   letter-spacing: 0.54px;
@@ -53,6 +65,9 @@ a {
   border-right: 3px var(--background-color) solid;
 }
 /* Navigation */
+header {
+  z-index: 3;
+}
 .navbar {
   background: var(--background-color);
   border-bottom: 2px solid var(--ctiron);
@@ -67,12 +82,14 @@ a {
   box-shadow: 0 0 50px rgba(204, 204, 204, 0.3);
 }
 
-.navbar .nav-link {
+.navbar .nav-link,
+#footer-menu li a {
   color: var(--ctiron);
   transition: color var(--transition-02) ease-in;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+#footer-menu li a:hover {
   color: var(--white);
   transition: color var(--transition-02) ease-in;
 }
@@ -125,7 +142,7 @@ a {
 /* Main content */
 /* Hero section */
 #hero {
-  height: 400px;
+  height: 517px;
   background: url("../images/hero_image.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -140,17 +157,21 @@ a {
 }
 /* Jumbotron */
 .jumbotron {
+  padding-top: 117px;
   position: relative;
   z-index: 1;
   color: var(--white);
 }
-
+.jumbotron .lead {
+  color: var(--white);
+}
 .jumbotron .lead span {
   color: var(--ctiron);
   font-weight: 500;
 }
 
-.jumbotron .btn {
+.jumbotron .btn,
+.modal-footer .btn {
   background: var(--ctiron);
   color: var(--background-color);
   transition: all var(--transition-02) ease-in;
@@ -236,6 +257,89 @@ a {
   transition: font-size var(--transition-02);
 }
 
+/* Skills section */
+.progress {
+  height: 32px;
+  background-color: var(--ctiron);
+}
+
+.progress-bar {
+  font-size: 18px;
+  background-color: var(--background-color);
+}
+
+.js-bar .progress-bar-striped,
+.jquery-bar .progress-bar-striped,
+.api-bar .progress-bar-striped,
+.node-bar .progress-bar-striped,
+.react-bar .progress-bar-striped {
+  background-image: none;
+  background: var(--ctiron);
+}
+
+.js-bar .progress-bar,
+.jquery-bar .progress-bar,
+.api-bar .progress-bar,
+.node-bar .progress-bar,
+.react-bar .progress-bar {
+  color: var(--background-color);
+}
+
+/* About me section */
+#about .btn {
+  background: var(--background-color);
+  color: var(--ctiron);
+  transition: all var(--transition-02) ease-in !important;
+}
+#about .btn:hover {
+  box-shadow: 0 0 5px var(--background-color);
+  color: var(--ctiron-hover);
+  transition: all var(--transition-02) ease-in;
+}
+.contact-info a i,
+.social-media a i {
+  font-size: 18px;
+}
+.contact-info a,
+.social-media a {
+  transition: all var(--transition-02) ease-in;
+}
+.contact-info a:hover,
+.social-media a:hover {
+  color: var(--ctiron-hover);
+  transition: all var(--transition-02) ease-in;
+  text-shadow: 0 0 1px #d3d2d2;
+}
+
+/* Footer */
+
+#footer {
+  border-top: 2px var(--ctiron) solid;
+  background: var(--background-color);
+}
+
+#footer a {
+  color: var(--ctiron);
+}
+
+/* Modal */
+
+.modal-content {
+  background: var(--background-color);
+}
+.modal-header,
+.modal-body,
+.modal-footer {
+  color: var(--ctiron) !important;
+  border-color: var(--ctiron);
+}
+
+.btn-close {
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e1ce7a'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+    center/1em auto no-repeat;
+  opacity: 1;
+}
 /* Media queries */
 @media (max-width: 576px) {
   .border-title {
