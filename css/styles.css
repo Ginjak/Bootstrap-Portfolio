@@ -1,8 +1,10 @@
 :root {
   --background-color: #0e273c;
+  --background-light-grey: #e5e5e7;
   --ctiron: #e1ce7a;
   --white: #fff;
   --transition-02: 0.2s;
+  --ctiron-hover: #dac259;
 }
 
 * {
@@ -13,6 +15,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background: var(--background-light-grey);
 }
 
 h1 {
@@ -34,6 +37,20 @@ a {
 /* Utility classes */
 .ls-54 {
   letter-spacing: 0.54px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+/* Padding horizontal */
+.px-12 {
+  padding: 0 12px;
+}
+
+/* Border color override */
+.border-title {
+  border-right: 3px var(--background-color) solid;
 }
 /* Navigation */
 .navbar {
@@ -107,13 +124,13 @@ a {
 
 /* Main content */
 /* Hero section */
-.hero {
+#hero {
   height: 400px;
   background: url("../images/hero_image.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.hero:before {
+#hero:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -126,4 +143,103 @@ a {
   position: relative;
   z-index: 1;
   color: var(--white);
+}
+
+.jumbotron .lead span {
+  color: var(--ctiron);
+  font-weight: 500;
+}
+
+.jumbotron .btn {
+  background: var(--ctiron);
+  color: var(--background-color);
+  transition: all var(--transition-02) ease-in;
+}
+.jumbotron .btn:hover {
+  background: var(--ctiron-hover);
+  box-shadow: 0 0 5px var(--ctiron);
+  transition: all var(--transition-02) ease-in;
+}
+
+/* Work section */
+#work .card-body {
+  transition: all var(--transition-02) ease-in;
+}
+
+#work .card-body:hover {
+  box-shadow: 0 0 10px -2px var(--background-color);
+  transition: all var(--transition-02) ease-in;
+}
+.overlay {
+  position: relative;
+}
+.overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+  transition: opacity var(--transition-02) ease-in;
+}
+.overlay:hover:before {
+  opacity: 0;
+  transition: opacity var(--transition-02) ease-in;
+}
+.project-one {
+  height: 410px;
+  background: url("../images/home_slide_1.webp");
+  background-position: center center;
+}
+
+.project-smaller {
+  height: 205px;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.project-two {
+  background: url("../images/gaist.webp");
+}
+.project-three {
+  background: url("../images/ridgewey.webp");
+}
+.project-four {
+  background: url("../images/gather&gather.webp");
+}
+.project-five {
+  background: url("../images/ch&co.webp");
+}
+.card-title,
+.card-text {
+  z-index: 1;
+  transition: font-size var(--transition-02);
+}
+.card-text {
+  color: var(--ctiron) !important;
+}
+
+.card-text-wraper {
+  background: var(--background-color);
+  bottom: 20px;
+  padding: 10px;
+}
+#work .card:hover .card-title {
+  font-size: 18px;
+  transition: font-size var(--transition-02);
+}
+#work .card:hover .card-text {
+  font-size: 14px;
+  transition: font-size var(--transition-02);
+}
+
+/* Media queries */
+@media (max-width: 576px) {
+  .border-title {
+    border-right: 0;
+    border-bottom: 3px var(--background-color) solid;
+  }
 }
